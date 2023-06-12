@@ -44,7 +44,7 @@ OR Categories.Name = 'Games';
  
  SELECT Products.Name, 
  SUM(Sales.Quantity) AS 'Total Sales', 
- SUM(PricePerUnit) AS 'Total Price'
+ SUM(Sales.Quantity * Sales.PricePerUnit) AS 'Total Price'
  FROM Sales
  INNER JOIN Products 
  ON Sales.ProductID = Products.ProductID
